@@ -94,6 +94,72 @@ body{background:#0a0a0f;color:#e8e8e8;font-family:'Hiragino Kaku Gothic ProN','Y
 }
 .tg-keyword b{font-size:16px;}
 
+.event-banner{
+  background:linear-gradient(135deg,#1a0a1e,#0a0a2a,#1a0a1e);
+  text-align:center;padding:24px 20px;
+  border-top:3px solid transparent;
+  border-bottom:3px solid transparent;
+  border-image:linear-gradient(90deg,#ff0000,#ff8800,#ffff00,#00ff00,#0088ff,#8800ff,#ff0000) 1;
+  animation:rainbow-shift 3s linear infinite;
+  position:relative;
+  overflow:hidden;
+}
+.event-banner::before{
+  content:'';position:absolute;top:0;left:-100%;width:200%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);
+  animation:shimmer 2s ease-in-out infinite;
+}
+@keyframes shimmer{0%{left:-100%;}100%{left:100%;}}
+@keyframes rainbow-shift{0%{border-image:linear-gradient(90deg,#ff0000,#ff8800,#ffff00,#00ff00,#0088ff,#8800ff,#ff0000) 1;}33%{border-image:linear-gradient(90deg,#00ff00,#0088ff,#8800ff,#ff0000,#ff8800,#ffff00,#00ff00) 1;}66%{border-image:linear-gradient(90deg,#8800ff,#ff0000,#ff8800,#ffff00,#00ff00,#0088ff,#8800ff) 1;}100%{border-image:linear-gradient(90deg,#ff0000,#ff8800,#ffff00,#00ff00,#0088ff,#8800ff,#ff0000) 1;}}
+.event-hot{
+  display:inline-block;font-size:13px;color:#fff;
+  background:linear-gradient(90deg,#ff2222,#ff4444,#ff2222);
+  padding:4px 16px;border-radius:20px;
+  margin-bottom:10px;font-weight:bold;
+  animation:hot-pulse 1.5s ease-in-out infinite;
+}
+@keyframes hot-pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+.event-main{
+  font-size:24px;font-weight:bold;
+  background:linear-gradient(90deg,#ff0000,#ff8800,#ffd700,#00ff88,#00aaff,#aa44ff,#ff0000);
+  background-size:300% 100%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:rainbow-text 3s linear infinite;
+  margin-bottom:6px;
+  filter:drop-shadow(0 0 8px rgba(255,215,0,.3));
+}
+@keyframes rainbow-text{0%{background-position:0% 50%;}100%{background-position:300% 50%;}}
+.event-sub{font-size:13px;color:#ff9800;}
+
+.results-section{
+  background:#0d0d18;text-align:center;padding:24px 20px;
+  border-bottom:1px solid #222;
+}
+.results-title{
+  font-size:15px;color:#ffd700;font-weight:bold;margin-bottom:14px;
+  letter-spacing:2px;
+}
+.results-table{
+  margin:0 auto;border-collapse:collapse;
+  font-size:14px;min-width:280px;
+}
+.results-table th{
+  padding:8px 14px;color:#888;font-size:12px;
+  border-bottom:1px solid #333;text-align:center;
+}
+.th-sub{font-size:10px;color:#666;}
+.results-table td{padding:8px 14px;text-align:center;border-bottom:1px solid #1a1a1a;}
+.label-cell{color:#ccc;text-align:left;font-weight:bold;font-size:13px;}
+.val{font-weight:bold;font-size:16px;}
+.val.high{color:#ffd700;}
+.val.mid{color:#ff9800;}
+.val.hot{color:#ff4444;text-shadow:0 0 8px rgba(255,68,68,.4);}
+.results-note{
+  margin-top:12px;font-size:13px;color:#ff6b6b;font-weight:bold;
+}
+
 .footer{text-align:center;padding:20px;color:#333;font-size:11px;border-top:1px solid #1a1a1a;}
 </style>
 </head>
@@ -102,6 +168,27 @@ body{background:#0a0a0f;color:#e8e8e8;font-family:'Hiragino Kaku Gothic ProN','Y
 <div class="hero">
   <h1>777FLASH</h1>
   <div class="sub">オンラインスロット</div>
+</div>
+
+<div class="event-banner">
+  <div class="event-hot">本日も激アツ営業中</div>
+  <div class="event-main">3/3（月）激アツイベント開催</div>
+  <div class="event-sub">前夜祭の本日から設定盛り盛り！見逃すな！</div>
+</div>
+
+<div class="results-section">
+  <div class="results-title">前回イベント実績</div>
+  <table class="results-table">
+    <thead>
+      <tr><th></th><th>2/21<br><span class="th-sub">イベ前日</span></th><th>2/22<br><span class="th-sub">ゾロ目イベ</span></th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="label-cell">456投入率</td><td class="val high">43.55%</td><td class="val high">40.32%</td></tr>
+      <tr><td class="label-cell">56投入率</td><td class="val mid">20.97%</td><td class="val hot">29.03%</td></tr>
+      <tr><td class="label-cell">6投入率</td><td class="val mid">9.68%</td><td class="val hot">12.90%</td></tr>
+    </tbody>
+  </table>
+  <div class="results-note">3/3もこの設定配分以上を予定！</div>
 </div>
 
 <div class="keyword">
@@ -156,6 +243,7 @@ body{background:#0a0a0f;color:#e8e8e8;font-family:'Hiragino Kaku Gothic ProN','Y
   </div>
   <a class="tg-btn" href="https://t.me/ONLINE777FLASH">@ONLINE777FLASH を開く</a>
   <div class="tg-note">Telegramアプリで上のQRを読み取るか、ボタンをタップしてください</div>
+  <div class="tg-note" style="margin-top:8px;color:#29b6f6;">対応時間: 16:00〜0:00</div>
   <div class="tg-keyword">合言葉「<b>フラッシュビンゴ</b>」を送信で特典あり</div>
 </div>
 
